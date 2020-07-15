@@ -29,7 +29,7 @@ parse_to_matrix <- function(file_path, transformation = F, cofactor = 5, csv_hea
     tdata <- file_path
 
   } else {
-  ext = file_ext(file_path)
+  ext = tools::file_ext(file_path)
   if (ext == "csv") {
     tdata <- csv_to_dataframe(file_path, csv_header)
     tdata <- pca(tdata, features_after_pca)
