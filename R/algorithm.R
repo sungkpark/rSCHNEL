@@ -70,12 +70,6 @@ cluster <- function(
                         num_walks, num_walks_per_landmark, monte_carlo_sampling, out_of_core_computation)
 
   # Read in the hsne hierarchy
-  #hsne_parser <- HSNE_parser()
-  #hier <- hsne_parser$read_HSNE_binary("test.hsne")
-  #hier <- read_HSNE_binary("test.hsne")
-  #hsne_parser <- HSNE_parser()
-  #hier <- hsne_parser$read_HSNE_binary("test.hsne")
-
   #message("should not stop here")
 
   # Initialize a matrix to store the result of the algorithm
@@ -83,12 +77,12 @@ cluster <- function(
   # Get rid of the empty column
   final_matrix <- final_matrix[,-1]
 
-  #message("also should not stop here")
+  message("also should not stop here")
 
   # Create a list with subscale numbers
   num_scales <- get_num_scales("test.hsne")
 
-  #message("if it stops here its python importing")
+  message("if it stops here its python importing")
 
   #n_scales <- c(2:hier$num_scales)
   n_scales <- c(1:num_scales - 1)
