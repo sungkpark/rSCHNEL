@@ -1,6 +1,6 @@
 # import parser and clustering of python implementation to R.
 # Used over R implementation for speed in reading binary file.
-reticulate::source_python("./py/src_clustering_HSNE_parser.py", envir = globalenv())
+reticulate::source_python("./py/src_clustering_HSNE_parser.py", envir = parent.frame())
 
 #' Parses and clusters a HSNE file.
 #'
