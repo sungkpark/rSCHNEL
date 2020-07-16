@@ -72,7 +72,7 @@ cluster <- function(
   # Read in the hsne hierarchy
   #hsne_parser <- HSNE_parser()
   #hier <- hsne_parser$read_HSNE_binary("test.hsne")
-  hier <- read_HSNE_binary("test.hsne")
+  #hier <- read_HSNE_binary("test.hsne")
   #hsne_parser <- HSNE_parser()
   #hier <- hsne_parser$read_HSNE_binary("test.hsne")
 

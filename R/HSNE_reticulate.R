@@ -9,8 +9,8 @@ reticulate::source_python("./py/src_clustering_HSNE_parser.py", envir = parent.f
 #' @param prop_method Leiden algorithm prop method. Either "cluster" or "label"
 #' @return A vector of labels.
 parse_and_cluster <- function(filepath, scale_num, prop_method = "cluster") {
-  #hsne <- pyClus$read_HSNE_binary(filepath)
-  hsne <- read_HSNE_binary(filepath)
+  #hsne <- pyClus.read_HSNE_binary(filepath)
+  hsne <- reticulate::py$read_HSNE_binary(filepath)
   result <- hsne$cluster_scale(scale_num, prop_method)
   return(result)
 }
@@ -20,7 +20,7 @@ parse_and_cluster <- function(filepath, scale_num, prop_method = "cluster") {
 #' @param filepath Path to HSNE file.
 #' @return An integer of number of scales.
 get_num_scales <- function(filepath) {
-  #hsne <- pyClus$read_HSNE_binary(filepath)
-  hsne <- read_HSNE_binary(filepath)
+  #hsne <- pyClus.read_HSNE_binary(filepath)
+  hsne <- reticulate::py$read_HSNE_binary(filepath)
   return(hsne$num_scales)
 }
