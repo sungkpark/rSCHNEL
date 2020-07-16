@@ -187,11 +187,11 @@ class HSNE_parser:
             logger.log("Number of scales %i" % numscales)
             hierarchy = HSNE(numscales)
             logger.log("Start reading first scale of size %i" % scalesize)
-            tmatrix = read_sparse_matrix(handle)
+            tmatrix = HSNE_parser.read_sparse_matrix(handle)
             logger.log("Done reading first scale..")
             hierarchy[0] = DataScale(num_scales=numscales, tmatrix=tmatrix)
             for i in range(1, numscales):
-                hierarchy[i] = build_subscale(handle, i, numscales, logger)
+                hierarchy[i] = HSNE_parser.build_subscale(handle, i, numscales, logger)
             print('Total time spent parsing hierarchy and building objects: %f' % (time.time() - longtic))
             return hierarchy
     
@@ -223,17 +223,17 @@ class HSNE_parser:
         scalesize = int(struct.unpack('f', handle.read(4))[0])
         logger.log("Scale size: %i" % scalesize)
         logger.log("Reading transmatrix..")
-        tmatrix = read_sparse_matrix(handle)
+        tmatrix = HSNE_parser.read_sparse_matrix(handle)
         logger.log("Reading landmarks of scale to original data..")
-        lm_to_original = read_uint_vector(handle)
+        lm_to_original = HSNE_parser.read_uint_vector(handle)
         logger.log("Reading landmarks to previous scale..")
-        lm_to_previous = read_uint_vector(handle)
+        lm_to_previous = HSNE_parser.read_uint_vector(handle)
         logger.log("Reading landmark weights..")
-        lm_weights = read_scalar_vector(handle)
+        lm_weights = HSNE_parser.read_scalar_vector(handle)
         logger.log("Reading previous scale to current scale..")
-        previous_to_current = read_uint_vector(handle)
+        previous_to_current = HSNE_parser.read_uint_vector(handle)
         logger.log("Reading area of influence..")
-        area_of_influence = read_sparse_matrix(handle)
+        area_of_influence = HSNE_parser.read_sparse_matrix(handle)
         subscale = SubScale(scalenum=i,
                             num_scales=numscales,
                             tmatrix=tmatrix,

@@ -15,4 +15,4 @@ LinkingTo: Rcpp
 VignetteBuilder: knitr
 Suggests: knitr, rmarkdown
 NeedsCompilation: yes
-Packaged: 2020-07-16 11:15:58 UTC; sung
+Packaged: 2020-07-16 12:19:11 UTC; sung
