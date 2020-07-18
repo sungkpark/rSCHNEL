@@ -77,12 +77,12 @@ cluster <- function(
   # Get rid of the empty column
   final_matrix <- final_matrix[,-1]
 
-  message("also should not stop here")
+  #message("also should not stop here")
 
   # Create a list with subscale numbers
   num_scales <- get_num_scales("test.hsne")
 
-  message("if it stops here its python importing")
+  #message("if it stops here its python importing")
 
   #n_scales <- c(2:hier$num_scales)
   n_scales <- c(1:num_scales - 1)
